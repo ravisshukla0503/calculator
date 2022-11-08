@@ -3,36 +3,37 @@ function dis(a)
 	document.getElementById("result").value+=a;
 }
 
-function che(){
+function answer(){
 		var res = [];
-		var answer;
+		var ans;
 		
 		if(document.getElementById("result").value.includes("+")){
 		res = document.getElementById("result").value.split('+');
-		return answer=parseInt(res[0]) + parseInt(res[1]);
+		return ans=parseFloat(res[0]) + parseFloat(res[1]);
 		}
 		
 		else if(document.getElementById("result").value.includes("-")){
 		res = document.getElementById("result").value.split('-');
-		return answer=parseInt(res[0]) - parseInt(res[1]);
+		return ans=parseFloat(res[0]) - parseFloat(res[1]);
 		}
 		
 		else if(document.getElementById("result").value.includes("/")){
 		res = document.getElementById("result").value.split('/');
-		return answer=parseInt(res[0]) / parseInt(res[1]);
+		return ans=parseFloat(res[0]) / parseFloat(res[1]);
 		}
 		
 		else{
 		res = document.getElementById("result").value.split('*');
-		return answer= parseInt(res[0]) * parseInt(res[1]);
+		return ans= parseFloat(res[0]) * parseFloat(res[1]);
 		}
 }
 		
-function toshowresult(){	
-var a = che()
-document.getElementById('result').value = a; 
-}
-	
+
 function clr(){
 		document.getElementById('result').value=" ";	
+}
+
+function toshowresult(){
+	const ab = answer();
+	document.getElementById("result").value = ab;
 }
